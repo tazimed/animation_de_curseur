@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boule.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="flex justify-center items-center min-h-screen">
+    <div class="cursor bg-cyan-300 rounded-full w-6 h-6 ">
+        
+    </div>
+
+    <script>
+        
+            var cursor = document.querySelector('.cursor');
+            var timeout;
+            document.addEventListener('mousemove', (e) => {
+                const x = e.pageX;
+                const y = e.pageY;
+    
+                cursor.style.top = `${y}px`;
+                cursor.style.left = `${x}px`;
+                cursor.style.display='block';
+
+            function mousestoped(){
+                cursor.style.display='none';
+                
+            }
+            clearTimeout(timeout);
+            timeout = setTimeout(mousestoped , 1000);
+            });
+            document.addEventListener('mouseleave', (e) => {
+                cursor.style.display = 'none';
+            });
+
+    </script>
+    
+</body>
+</html>

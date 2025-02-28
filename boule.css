@@ -1,0 +1,39 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #000115;
+    height: 100vh;
+}
+.cursor{
+    z-index: 999;
+    position: fixed;
+    pointer-events: none;
+    box-shadow: 0 0 20px rgb(103 232 249),
+                0 0 60px rgb(103 232 249),
+                0 0 100px rgb(103 232 249);
+    animation: colors 5s infinite;
+    transform: translate(-50% , -50%);
+    display: none;
+}
+@keyframes colors{
+    0%{
+        filter: hue-rotate(0deg );
+    }
+    100%{
+        filter: hue-rotate(360deg );
+    }
+}
+.cursor::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgb(103 232 249);
+    opacity: 0.2;
+    transform: translate(-27% ,-27%);
+    border-radius: 50%;
+}
